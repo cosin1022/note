@@ -1,1 +1,42 @@
-
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>我的笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Docsify 核心 CSS 和 JS -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: '📘 个人笔记',
+      repo: '',  // 如果不需要显示 GitHub 图标可留空，或填你的仓库地址
+      loadSidebar: true,        // 自动加载 _sidebar.md 作为侧边栏
+      search: 'auto',           // 启用全文搜索
+      subMaxLevel: 2,           // 侧边栏自动生成的最大目录深度
+      // 数学公式支持（使用 KaTeX）
+      plugins: [
+        function(hook, vm) {
+          hook.beforeEach(function(content) {
+            // 简单的 LaTeX 渲染插件（也可以使用 docsify-katex 插件）
+            return content.replace(/\$\$([^$]*)\$\$/g, function(_, tex) {
+              return '<div class="katex-block">' + katex.renderToString(tex, { throwOnError: false }) + '</div>';
+            }).replace(/\$([^$]*)\$/g, function(_, tex) {
+              return katex.renderToString(tex, { throwOnError: false, displayMode: false });
+            });
+          });
+        }
+      ]
+    }
+  </script>
+  <!-- Docsify 核心库 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <!-- 搜索插件 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
+  <!-- KaTeX 数学公式库 -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script src="//cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+</body>
+</html>
