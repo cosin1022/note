@@ -13,7 +13,7 @@
 using std::vector;
 vector 是一个类模板：template <class T, class Allocator = std::allocator<T>> class vector;
 元素连续存储，可通过下标 + 指针偏移快速访问。
-2. 构造与初始化
+## 2. 构造与初始化
 Cpp
 vector<int> v1;                // 空 vector
 vector<int> v2(5);             // 5 个元素，值初始化为 0
