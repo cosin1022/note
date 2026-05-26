@@ -1,4 +1,4 @@
 # C++ STL 笔记
 ## 容器概览
 - `vector`：动态数组
-- `map`：红黑树实现的有序键值对
+- `unordeded_map`：哈希表
