@@ -1,0 +1,9 @@
+# std::unordered_map 用法详解
+`std::unordered_map` 是 C++ 标准模板库中的无序关联容器，基于哈希表实现，存储键值对，键唯一，平均时间复杂度为 O(1)。
+---
+## 1. 头文件与基本定义
+```cpp
+#include <unordered_map>
+// 命名空间
+using std::unordered_map;
+```
