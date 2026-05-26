@@ -8,6 +8,8 @@
 using std::unordered_map;
 ```
 类模板：template <class Key, class T, class Hash = std::hash<Key>, class KeyEqual = std::equal_to<Key>, class Allocator = std::allocator<std::pair<const Key, T>>> class unordered_map;
+
 元素是 std::pair<const Key, T>，键不可修改。
+
 内部使用桶（bucket）组织，负载因子控制 rehash。
 
